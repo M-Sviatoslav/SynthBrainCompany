@@ -1,0 +1,149 @@
+.arc-header {
+  position: relative;
+  z-index: 9999;
+}
+
+.arc-arrow-btn {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 10010;
+
+
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.arc-arrow-btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+}
+
+.arrow-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.85);
+}
+
+.arrow-svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+  transition: transform 320ms cubic-bezier(.2, .9, .2, 1);
+}
+
+.arc-arrow-btn.open .arrow-svg {
+  transform: rotate(180deg);
+}
+
+.arc-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 10000;
+  transition: height 380ms cubic-bezier(.2, .9, .2, 1);
+}
+
+.arc-overlay.open {
+  height: var(--overlay-height, 33vh);
+  pointer-events: auto;
+}
+
+.arc-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(80, 80, 80, 0.86);
+  z-index: 1;
+}
+
+.arc-menu {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.connector-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.arc-item {
+  position: absolute;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 40px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 22px;
+  color: #fff;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.85);
+
+  opacity: 0;
+  transition:
+    opacity 260ms ease,
+    transform 420ms cubic-bezier(.2, .9, .2, 1),
+    background 160ms;
+  z-index: 5;
+}
+
+.arc-item.visible {
+  opacity: 1;
+}
+
+.arc-item:hover,
+.arc-item:focus {
+  transform: translate(-50%, -10px);
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .arrow-circle {
+    width: 56px;
+    height: 56px;
+  }
+
+  .arrow-svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .arc-item {
+    padding: 10px 24px;
+    font-size: 18px;
+  }
+}
+
+
