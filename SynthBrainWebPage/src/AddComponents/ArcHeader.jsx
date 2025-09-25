@@ -1,8 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./ArcHeader.css";
 
 const ArcHeader = ({
-  items = ["HOME", "ABOUT", "CONTACT"],
+  items = [
+    { label: "HOME", path: "/" },
+    { label: "SHOWCASE", path: "/ShowCase" },
+    { label: "CONTACT", path: "/ContactPage" },
+  ],
   radius = 220,
   overlayHeight = "33vh",
 }) => {
@@ -12,9 +17,7 @@ const ArcHeader = ({
 
   const toggleMenu = () => setOpen((prev) => !prev);
 
-  const handleSelect = (item, idx, e) => {
-    e.preventDefault();
-    console.log("selected:", item, idx);
+  const handleSelect = () => {
     setOpen(false);
   };
 
@@ -22,7 +25,6 @@ const ArcHeader = ({
   const arcAngle = 120;
   const step = total > 1 ? arcAngle / (total - 1) : 0;
   const start = -arcAngle / 2;
-
 
   useEffect(() => {
     if (!menuRef.current || !open) return;
@@ -90,7 +92,6 @@ const ArcHeader = ({
                 </mask>
               </defs>
 
-
               <polyline
                 points={positions.map((p) => `${p.x},${p.y}`).join(" ")}
                 stroke="white"
@@ -99,7 +100,6 @@ const ArcHeader = ({
                 filter="url(#glow)"
                 mask="url(#capsuleMask)"
               />
-
 
               <defs>
                 <filter id="glow">
@@ -113,28 +113,26 @@ const ArcHeader = ({
             </svg>
           )}
 
-
-          {items.map((it, idx) => {
+          {items.map((item, idx) => {
             const angle = start + step * idx;
             const rad = (angle * Math.PI) / 180;
             const x = radius * Math.sin(rad);
             const y = radius * (1 - Math.cos(rad));
 
             return (
-              <a
+              <Link
                 key={idx}
-                href="#"
-                role="menuitem"
+                to={item.path}
                 className={`arc-item ${open ? "visible" : ""}`}
-                onClick={(e) => handleSelect(it, idx, e)}
+                onClick={handleSelect}
                 tabIndex={open ? 0 : -1}
                 style={{
                   left: `calc(50% + ${x}px)`,
                   bottom: `calc(22px + ${y}px)`,
                 }}
               >
-                {it}
-              </a>
+                {item.label}
+              </Link>
             );
           })}
         </nav>
