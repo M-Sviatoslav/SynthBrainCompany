@@ -127,6 +127,7 @@
   transform: translate(-50%, -10px);
   background: rgba(255, 255, 255, 0.2);
   outline: none;
+  color: #87CEFA;
 }
 
 @media (max-width: 600px) {

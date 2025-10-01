@@ -1,0 +1,93 @@
+:root {
+  --diamond-size: 160px;
+  --connector-length: 90px;
+  --glow: 14px;
+  --border-width: 2px;
+}
+
+.diamond-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--connector-length);
+  padding: 40px 20px;
+}
+
+.diamond-wrapper {
+  position: relative;
+  width: var(--diamond-size);
+  height: var(--diamond-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diamond {
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+  border: var(--border-width) solid white;
+  border-radius: 6px;
+  box-shadow: 0 0 var(--glow) white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diamond-content {
+  transform: rotate(-45deg);
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px;
+  word-wrap: break-word;
+  max-width: calc(var(--diamond-size) * 0.7);
+  line-height: 1.2;
+}
+
+/* Соединительные линии */
+.diamond-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  width: var(--connector-length);
+  height: 2px;
+  background: white;
+  box-shadow: 0 0 var(--glow) white;
+}
+
+.diamond-row .diamond-wrapper:last-child::after {
+  content: none;
+}
+
+/* Мобильная версия */
+@media (max-width: 720px) {
+  :root {
+    --diamond-size: 140px;
+    --connector-length: 50px;
+  }
+
+  .diamond-row {
+    flex-direction: column;
+    gap: var(--connector-length);
+  }
+
+  .diamond-wrapper::after {
+    content: none;
+  }
+
+  .diamond-wrapper:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: var(--connector-length);
+    background: white;
+    box-shadow: 0 0 var(--glow) white;
+  }
+}

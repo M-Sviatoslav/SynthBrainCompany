@@ -5,12 +5,14 @@ import Presentation from './MainPageComponents/presentation'
 import ArcHeader from "./AddComponents/ArcHeader";
 import ShowCase from './ShowCasePage/showcase';
 import ContactPage from './ContactPage/contactPage';
+import FixedLogo from './AddComponents/miniLogo';
 
 
 function Layout() {
   return (
     <>
       <ArcHeader />
+      <FixedLogo/>
       <main>
         <Outlet />
       </main>
