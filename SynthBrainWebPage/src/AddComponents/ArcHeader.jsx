@@ -6,7 +6,7 @@ const ArcHeader = ({
   items = [
     { label: "HOME", path: "/" },
     { label: "SHOWCASE", path: "/ShowCase" },
-    { label: "CONTACT", path: "/ContactPage" },
+    { label: "PRICE", path: "/PricePage" },
   ],
   radius = 220,
   overlayHeight = "33vh",

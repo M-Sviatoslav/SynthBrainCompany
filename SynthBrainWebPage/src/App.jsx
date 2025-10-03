@@ -4,7 +4,7 @@ import './App.css'
 import Presentation from './MainPageComponents/presentation'
 import ArcHeader from "./AddComponents/ArcHeader";
 import ShowCase from './ShowCasePage/showcase';
-import ContactPage from './ContactPage/contactPage';
+import PricePage from './PricePage/pricePage';
 import FixedLogo from './AddComponents/miniLogo';
 
 
@@ -29,7 +29,7 @@ function App() {
         <Route element={<Layout />}>
           <Route index element={<Presentation />} />
           <Route path="/ShowCase" element={<ShowCase />} />
-          <Route path="/ContactPage" element={<ContactPage />} />
+          <Route path="/PricePage" element={<PricePage />} />
         </Route>
       </Routes>
     </>
