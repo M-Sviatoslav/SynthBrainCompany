@@ -2,6 +2,7 @@ import Banner from "./banner";
 import AgentInfo from "./aiAgentInfo"
 import DiamondRow from "./botSection";
 import BotInfo from "./botInfo"
+import Footer from "./footer";
 
 export default function Presentation(){
   return (
@@ -15,6 +16,7 @@ export default function Presentation(){
       <DiamondRow />
       <BotInfo />
       <div className="glow-line"></div>
+      <Footer/>
     </div>
   );
 }
