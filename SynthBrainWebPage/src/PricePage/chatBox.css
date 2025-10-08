@@ -5,13 +5,11 @@
   align-items: center;
   position: relative;
   margin-top: 200px;
+  margin-bottom: 150px; /* чтобы был запас под блок ввода */
 }
 
 .chat-response {
-  position: fixed;
-  bottom: 90px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative; /* раньше было fixed */
   width: 80%;
   max-width: 900px;
   background: rgba(20, 20, 20, 0.9);
@@ -19,14 +17,12 @@
   padding: 20px 30px;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  z-index: 999;
   backdrop-filter: blur(6px);
+  margin-bottom: 20px; /* добавим отступ над полем ввода */
 }
 
-
 .chat-input-container {
-  position: fixed;
-  bottom: 30px;
+  position: relative; /* раньше было fixed */
   width: 80%;
   max-width: 900px;
   display: flex;
@@ -61,4 +57,5 @@
 .chat-input-container button:hover {
   background: #ddd;
 }
+
 
