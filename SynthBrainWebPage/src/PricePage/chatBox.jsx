@@ -2,6 +2,20 @@ import React, { useState, useEffect, useRef } from "react";
 import "./chatBox.css";
 
 const ChatBox = () => {
+
+  const sendPrompt = async () => {
+    const res = await fetch("http://localhost:5000/api/gemini", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt: inputValue }),
+    });
+    const data = await res.json();
+    setResponses((prev) => [
+      ...prev,
+      { prompt: inputValue, answer: data.answer },
+    ]);
+  };
+  
   const [message, setMessage] = useState("");
   const [response, setResponse] = useState("");
   const responseRef = useRef(null);
