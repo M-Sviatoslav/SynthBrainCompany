@@ -1,9 +1,11 @@
 .site-footer {
   width: 100%;
+  box-sizing: border-box;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   color: #111;
   padding: 18px 20px;
   background: none;
+  overflow: hidden;
 }
 
 .footer-inner {
@@ -14,7 +16,10 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 100%;
 }
+
 
 .footer-contact {
   display: flex;
@@ -28,6 +33,7 @@
   font-size: 0.95rem;
   line-height: 1.2;
   color: aliceblue;
+  word-break: break-word;
 }
 
 .footer-link:hover,
@@ -42,16 +48,20 @@
   color: aliceblue;
 }
 
+
 .footer-line {
   margin: 2px 0;
   font-size: 0.9rem;
 }
 
+
 .footer-social {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
+
 
 .social-link {
   display: inline-flex;
@@ -61,12 +71,15 @@
   color: inherit;
   font-weight: 500;
   font-size: 0.95rem;
+  white-space: nowrap;
 }
+
 
 .social-link:focus {
   outline: 3px solid rgba(0, 0, 0, 0.12);
   outline-offset: 3px;
 }
+
 
 .facebook-icon {
   width: 20px;
@@ -74,33 +87,83 @@
   display: block;
   fill: currentColor;
   color: aliceblue;
+  flex-shrink: 0;
 }
+
 
 .social-label {
-  display: none;
+  display: inline-block;
   color: aliceblue;
+  min-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 140px;
 }
 
-@media (min-width: 520px) {
-  .social-label {
-    display: inline-block;
-  }
+
+.facebook-icon:hover,
+.social-label:hover {
+  color: #7ee7ff;
 }
 
-@media (max-width: 520px) {
+
+@media (max-width: 720px) {
   .footer-inner {
     gap: 10px;
+    align-items: center;
+    justify-content: center;
   }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px 8px;
+  }
+
   .footer-texts {
     order: 3;
     width: 100%;
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  .footer-contact {
+    order: 1;
+    width: 100%;
+    align-items: center;
+  }
+
+  .footer-social {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .social-link {
+    justify-content: center;
+  }
+
+  .social-label {
+    max-width: 110px;
+    font-size: 0.95rem;
+  }
+
+  .footer-link {
+    font-size: 0.95rem;
+    word-wrap: break-word;
   }
 }
 
-.facebook-icon:hover{
-  color: #7ee7ff;
-}
-
-.social-label:hover{
-  color: #7ee7ff;
+@media (max-width: 360px) {
+  .facebook-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .social-label {
+    max-width: 90px;
+    font-size: 0.9rem;
+  }
+  .footer-texts {
+    font-size: 0.95rem;
+  }
 }
