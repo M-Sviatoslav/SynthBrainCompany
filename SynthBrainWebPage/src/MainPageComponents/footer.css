@@ -32,7 +32,8 @@
 
 .footer-link:hover,
 .footer-link:focus {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #7ee7ff;
 }
 
 .footer-texts {
@@ -97,9 +98,9 @@
 }
 
 .facebook-icon:hover{
-  color: #61dafbaa;
+  color: #7ee7ff;
 }
 
 .social-label:hover{
-  color: #61dafbaa;
+  color: #7ee7ff;
 }

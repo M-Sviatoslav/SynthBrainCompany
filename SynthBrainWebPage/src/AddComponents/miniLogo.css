@@ -3,11 +3,34 @@
   top: 0;
   left: 0;
   padding: 10px;
-  z-index: 1000;
+  z-index: 20000;
 }
 
 .fixed-logo img {
   display: block;
-  max-width: 120px; 
+  max-width: 120px;
   height: auto;
+  transition: max-width 0.3s ease;
 }
+
+
+@media (max-width: 720px) {
+  .fixed-logo img {
+    max-width: 90px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .fixed-logo img {
+    max-width: 70px;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .fixed-logo img {
+    max-width: 60px;
+  }
+}
+
