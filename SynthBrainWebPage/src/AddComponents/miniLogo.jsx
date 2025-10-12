@@ -1,6 +1,6 @@
 import React from "react";
 import "./miniLogo.css";
-import miniLogoSB from "/Users/sviatoslavmatsishin/Desktop/JS/SynthBrain/SynthBrainWebPage/public/images/miniLogoSB.png";
+import miniLogoSB from "/src/public/images/miniLogoSB.png";
 
 const FixedLogo = ({ src, alt }) => {
   return (

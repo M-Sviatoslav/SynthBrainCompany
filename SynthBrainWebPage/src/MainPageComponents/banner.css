@@ -9,7 +9,7 @@
   justify-content: center;
   position: relative;
   color: white;
-  background-image: url("/images/sandBanner.jpg");
+  background-image: url("/src/public/images/sandBanner.jpg");
   margin-top: 150px;
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import "./botsMedia.css";
-import Test from "/Users/sviatoslavmatsishin/Desktop/JS/SynthBrain/SynthBrainWebPage/public/images/videos/Test.mp4";
-import Test1 from "/Users/sviatoslavmatsishin/Desktop/JS/SynthBrain/SynthBrainWebPage/public/images/videos/Test1.mp4";
+import Test from "/src/public/images/videos/Test.mp4";
+import Test1 from "/src/public/images/videos/Test1.mp4";
 
 export default function VideoShowcase() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import "./aiMedia.css";
-import Test2 from "/Users/sviatoslavmatsishin/Desktop/JS/SynthBrain/SynthBrainWebPage/public/images/videos/Test2.mp4";
+import Test2 from "/src/public/images/videos/Test2.mp4";
 
 export default function SingleVideoShowcase() {
   return (
