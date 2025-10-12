@@ -11,8 +11,8 @@ export default function BotPrices() {
           Limited number of required functions
         </div>
         <div className="pricing-value">
-          <span className="price-range">100 – 200</span>
-          <span className="euro">€</span>
+          <span className="price-range">100 – 200€</span>
+          {/* <span className="euro">€</span> */}
         </div>
       </div>
 
@@ -22,8 +22,8 @@ export default function BotPrices() {
         <div className="pricing-label">Multifunctional bot</div>
         <div className="pricing-description">A wide range of possibilities</div>
         <div className="pricing-value">
-          <span className="price-range">250 – 700</span>
-          <span className="euro">€</span>
+          <span className="price-range">250 – 700€</span>
+          {/* <span className="euro">€</span> */}
         </div>
       </div>
 
@@ -35,8 +35,8 @@ export default function BotPrices() {
           Bots that perform service functionality
         </div>
         <div className="pricing-value">
-          <span className="price-range">1000 – 2500</span>
-          <span className="euro">€</span>
+          <span className="price-range">1000 – 2500€</span>
+          {/* <span className="euro">€</span> */}
         </div>
       </div>
     </div>

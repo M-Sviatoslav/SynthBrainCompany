@@ -11,8 +11,8 @@ export default function AgentPrices() {
           The system performs fairly simple functions.
         </div>
         <div className="pricing-value">
-          <span className="price-range">100 – 300</span>
-          <span className="euro">€</span>
+          <span className="price-range">100 – 300€</span>
+          {/* <span className="euro">€</span> */}
         </div>
       </div>
 
@@ -24,8 +24,8 @@ export default function AgentPrices() {
           A wide range of features and connections to third-party services
         </div>
         <div className="pricing-value">
-          <span className="price-range">450 – 900</span>
-          <span className="euro">€</span>
+          <span className="price-range">450 – 900€</span>
+          {/* <span className="euro">€</span> */}
         </div>
       </div>
 
@@ -37,8 +37,8 @@ export default function AgentPrices() {
           Technologies designed for large-scale tasks
         </div>
         <div className="pricing-value">
-          <span className="price-range">1000 – 4000</span>
-          <span className="euro">€</span>
+          <span className="price-range">1000 – 4000€</span>
+          {/* <span className="euro">€</span> */}
         </div>
       </div>
     </div>
